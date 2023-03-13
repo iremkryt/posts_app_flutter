@@ -1,6 +1,6 @@
 # posts_app_flutter
 
-A new Flutter project.
+Bloc pattern
 
 ## Getting Started
 
