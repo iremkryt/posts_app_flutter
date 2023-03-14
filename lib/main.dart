@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:posts_app_flutter/core/app_theme.dart';
 import 'package:posts_app_flutter/features/posts/presentation/bloc/add_delete_update_post/add_delete_update_post_bloc.dart';
 import 'package:posts_app_flutter/features/posts/presentation/bloc/posts/posts_bloc.dart';
+import 'package:posts_app_flutter/features/posts/presentation/pages/posts_page.dart';
 import 'injection_container.dart' as di;
 
 void main() async {
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: appTheme,
         title: 'POSTS',
-        //home: PostsPage(),
+        home: PostsPage(),
       ),
     );
 
