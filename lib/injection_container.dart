@@ -1,4 +1,7 @@
 import 'package:get_it/get_it.dart';
+import 'package:http/http.dart' as http;
+import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:posts_app_flutter/core/network/network_info.dart';
 import 'package:posts_app_flutter/features/posts/data/datasources/post_local_data_source.dart';
 import 'package:posts_app_flutter/features/posts/data/datasources/post_remote_data_source.dart';
 import 'package:posts_app_flutter/features/posts/data/repositories/post_repository_impl.dart';
@@ -9,6 +12,7 @@ import 'package:posts_app_flutter/features/posts/domain/usecases/get_all_posts.d
 import 'package:posts_app_flutter/features/posts/domain/usecases/update_post.dart';
 import 'package:posts_app_flutter/features/posts/presentation/bloc/add_delete_update_post/add_delete_update_post_bloc.dart';
 import 'package:posts_app_flutter/features/posts/presentation/bloc/posts/posts_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 final sl = GetIt.instance;
 
@@ -41,6 +45,10 @@ Future<void> init() async {
     sharedPreferences: sl(),
   ));
   // Core
-
+  sl.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(sl()));
   // External
+  final sharedPreferences = await SharedPreferences.getInstance();
+  sl.registerLazySingleton(() => SharedPreferences);
+  sl.registerLazySingleton(() => http.Client());
+  sl.registerLazySingleton(() => InternetConnectionChecker());
 }
