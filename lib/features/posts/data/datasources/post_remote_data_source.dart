@@ -1,6 +1,4 @@
 import 'dart:convert';
-import 'dart:html';
-
 import 'package:dartz/dartz.dart';
 import 'package:posts_app_flutter/core/error/exception.dart';
 import 'package:posts_app_flutter/features/posts/data/models/post_model.dart';
