@@ -18,8 +18,8 @@ final appTheme = ThemeData(
     color: primaryColor
   ),
   floatingActionButtonTheme: FloatingActionButtonThemeData(
-    backgroundColor: primaryColor,
-    foregroundColor: secondaryColor,
+    backgroundColor: secondaryColor,
+    foregroundColor: primaryColor,
   ),
   inputDecorationTheme: InputDecorationTheme(
     floatingLabelStyle: TextStyle(
