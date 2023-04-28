@@ -15,12 +15,12 @@ dependencies:
   #Bloc for state management
   flutter_bloc: ^8.1.2
   #Service locator
-  get_it: ^7.2.0
+  get_it: ^7.3.0
   #Remote api
   internet_connection_checker: ^1.0.0+1
   http: ^0.13.5
   #Local cache
-  shared_preferences: ^2.0.18
+  shared_preferences: ^2.1.0
 
   dartz: ^0.10.1
   equatable: ^2.0.5
